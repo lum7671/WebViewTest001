@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko">
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<title>JavaScript Test</title>
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+
+	<div id="divIOS"></div>
+	<br />
+	<br />
+	<div id="btnIOS">iOS로 callbackToiOSFromJavaScript 호출하기</div>
+
+	<script>
+	  console.log('=== Java Script Start ===>');
+	  var divIOS = $('#divIOS');
+
+	  function commandFromiOSToJavaScript(firstArg, secondArg)
+	  {
+	  divIOS.html(divIOS.html() + 'First Arg : ' + firstArg + ', Second Arg : ' + secondArg + '<br />');
+	  return 'ok!'
+	  }
+
+	  $('#btnIOS').click(function(){
+	  callbackToiOSFromJavaScript('"JavaScript" ==> "iOS" 로 이 메세지를 보냄!!!');
+	  });
+	  console.log('<=== Java Script End ===');
+	</script>
+  </body>
+</html>
